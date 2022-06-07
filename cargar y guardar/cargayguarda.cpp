@@ -118,12 +118,9 @@ void mostrar(void){
     p=i;
     cout<<endl<<endl;
     while(p){
-        //como si existe la lista empezamos a recorrer los elementos o datos de la lista
+
         cout<<cont++<<"\n Valor = "<<p->i<<endl;
-        // operador ->   es un apuntador de asignacion  
-        // = es un operador para asignar un valor   a = 4
-        // == es un operador de equivalencia    a == b
-        p=p->s;
+
     }
     cout<<"\n Fin de la lista";
     getch();
@@ -137,11 +134,11 @@ int buscar(int d){
         return(0);
     }
 
-    //cuando si hay
+    
     p=i;
     a = NULL;
     while(p->s && p->i<d){
-        //recorrer los valores de la lista
+        
         a=p;
         p=p->s;
 
@@ -153,23 +150,19 @@ int buscar(int d){
 void insertar(int dat){
 
     if(!i){
-        //creando un nuevo nodo para asignar el dato
-        //aqui es cuando se ingresa el primer valor
+    
         i = new(dato);
         i->s = NULL;
         i->i = dat;
         return; 
     }
     if(buscar(dat)){
-        //inserto 1
-        //insertar 1
+      
         cout<<"\n El Dato Existe";
         getch();
         return;
     }
-    //ahora inserte el 2
-    //si tuvieramos varios valores en la lista    
-    //  nodo3 = -4     nodo2= a==-3       nodo1 = 1    nnod4 = 2      nodo2= a==3 nod5= 23 NULL    ......
+   
     e = new(dato);
     e->i=dat;
     if(p==i && p->s){
@@ -197,14 +190,14 @@ void insertar(int dat){
 }
 
 void borrar(void){
-    cout<<"\n Ingresa el dato que deseas eliminar: ";   //23
+    cout<<"\n Ingresa el dato que deseas eliminar: ";  
     cin>>da;
     if(buscar(da)){
 
         if(a)
-            a->s = p->s;   //asignar el nodo donde esta el dato
+            a->s = p->s;   
         else
-            i = p->s;    //que obtenga el valor del nodo
+            i = p->s;    
         delete(p);
         cout<<"\n Dato eliminado";
     }else{
@@ -214,7 +207,7 @@ void borrar(void){
 }
 void guardar(void){
 
-    //archivo 
+    
     FILE *arch;
     arch = fopen("Datos-a.txt", "w");
     if(!i){
