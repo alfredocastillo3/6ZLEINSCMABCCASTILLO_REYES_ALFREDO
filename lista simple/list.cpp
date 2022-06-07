@@ -1,5 +1,3 @@
-//Insertar un elemento en una lista 
-
 #include<iostream>
 #include<conio.h>
 #include<stdlib.h>
@@ -10,7 +8,7 @@ struct Nodo{
 	Nodo *siguiente;
 };
 
-//Prototipos de Funciones
+
 void menu();
 void insertarLista(Nodo *&,int);
 void mostrarLista(Nodo *);
@@ -123,28 +121,28 @@ void buscarLista(Nodo *lista,int n){
 }
 
 void eliminarNodo(Nodo *&lista,int n){
-	//PReguntar si la lista no esta vacia
+	
 	if(lista != NULL){
 		Nodo *aux_borrar;
 		Nodo *anterior = NULL;
 		
 		aux_borrar =lista;
 		
-		//Recorrer la lista
+		
 		while((aux_borrar != NULL) && (aux_borrar->dato != n)){
 			anterior = aux_borrar;
 			aux_borrar = aux_borrar->siguiente;
 		}
-		//El elemnto no ha sido encontrado
+		
 		if(aux_borrar ==NULL){
 			cout<<"El elemento no  ha sido encontrado";
 		}
-		//El primer elemento es el que vamos a eliminar
+		
 		else if(anterior ==NULL){
 			lista = lista->siguiente;
 			delete aux_borrar;
 		}
-		//El elemento esta en la lista pero, no es el primer nodo
+		
 		else{
 			anterior->siguiente = aux_borrar->siguiente;
 			delete aux_borrar;
