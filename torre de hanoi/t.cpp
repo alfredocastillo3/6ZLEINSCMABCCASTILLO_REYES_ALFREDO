@@ -15,7 +15,7 @@ char disko= '*' ;
 int main()
 {
     int cantDiscos, movimientos;
- printf("Cantidad de mover: ");
+ printf("Cantidad de numero: ");
  scanf("%d", &cantDiscos);
 
  t1=cantDiscos;
