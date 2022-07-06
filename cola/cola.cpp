@@ -1,100 +1,132 @@
-
 #include<iostream>
-#include<conio.h>
-#include<stdlib.h>
+
 using namespace std;
 
-struct Nodo{
-	char dato;
-	Nodo *siguiente;	
+
+struct nodo{
+	string color; 
+	struct nodo *siguiente;
 };
 
 
-void menu();
-void insertarCola(Nodo *&,Nodo *&,char);
-bool cola_vacia(Nodo *);
-void suprimirCola(Nodo *&,Nodo *&,char &);
+struct cola{
+	nodo *ultimo;
+	nodo *primero;
+};
 
-int main(){
+
+void encolar(struct cola &q, string c){
+
+	struct nodo *aux = new(struct nodo);
 	
-	menu();
+	aux ->color = c;
+	aux ->siguiente = NULL;
 	
-	getch();
-	return 0;
+	if(q.ultimo == NULL){
+		q.ultimo = aux;
+	}else{
+		(q.primero)->siguiente = aux;
+	}
+	
+	q.primero = aux;
+}
+
+
+string desencolar(struct cola &q){
+	string col;
+	struct nodo *aux;
+	
+
+	aux = q.ultimo;
+	col = aux->color;
+	q.ultimo = (q.ultimo)->siguiente;
+	
+	
+	delete(aux);
+	
+	return col;
+}
+
+
+void muestracola(struct cola q){
+
+	struct nodo *aux;
+	
+	aux = q.ultimo;
+
+	while(aux!=NULL){
+		cout<<aux->color<<" --> ";
+		aux = aux->siguiente;
+	}
+}
+
+
+void vaciarcola(struct cola &q){
+	
+	struct nodo *aux;
+	
+	while(q.ultimo != NULL){
+		aux = q.ultimo;
+		q.ultimo = aux->siguiente;
+		delete(aux);
+	}
+	q.ultimo = NULL;
+	q.primero = NULL;
 }
 
 void menu(){
-	int opc;
-	char dato;
+	cout<<"\n\t Cola de Colores\n";
+	cout<<"\t 1. Encolar\n";
+	cout<<"\t 2. Desencolar\n";
+	cout<<"\t 3. Mostrar\n";
+	cout<<"\t 4. Vaciar\n";
+	cout<<"\t 5. Salir\n";
+}
+
+int main(){
+
+	struct cola q;
 	
-	Nodo *frente = NULL;
-	Nodo *fin = NULL;
+
+	q.ultimo = NULL;
+	q.primero = NULL;
+	
+	
+	string dato;
+	int op;
+	string x; 
 	
 	do{
-		cout<<"\t.:MENU:.\n";
-		cout<<"1. Insertar un caracter a una cola"<<endl;
-		cout<<"2. Mostrar todos los elementos de la cola"<<endl;
-		cout<<"3. Salir"<<endl;
-		cout<<"Opcion: ";
-		cin>>opc; 
+		menu();
+		cout<<"\t"; cin>>op;
 		
-		switch(opc){
-			case 1: cout<<"\n agregar a la cola: ";
-					cin>>dato;
-					insertarCola(frente,fin,dato);
-					break;
-			case 2: cout<<"\nMostrando los elementos de la cola: ";
-					while(frente != NULL){
-						suprimirCola(frente,fin,dato);
-						if(frente != NULL){
-							cout<<dato<<" , ";
-						}
-						else{
-							cout<<dato<<".";
-						}
-					}
-					cout<<"\n";
-					system("pause");
-					break;
-			case 3: break;
+		switch(op){
+			case 1:
+				cout<<"\n\t Color a Encolar: ";
+				cin>>dato;
+				encolar(q,dato);
+				cout<<"\n\t Color: "<<dato<<" encolado...\n";
+			break;
+			
+			case 2:
+				x = desencolar(q);
+				cout<<"\n\t Color: "<<x<<" desencolado...\n";
+			break;
+			
+			case 3:
+				cout<<"\n\t Mostrar Cola: \n";
+				
+				if(q.ultimo != NULL) muestracola(q);
+				else cout<<"\n\t Cola Vacia...\n";
+			break;
+			
+			case 4:
+				vaciarcola(q);
+				cout<<"\n\t Colita se Vacio...\n";
+			break;
+			
 		}
-		system("cls");
-	}while(opc != 3);
-}
-
-
-void insertarCola(Nodo *&frente,Nodo *&fin,char n){
-	Nodo *nuevo_nodo = new Nodo();
+	}while(op != 5);
 	
-	nuevo_nodo->dato = n;
-	nuevo_nodo->siguiente = NULL;
-	
-	if(cola_vacia(frente)){
-		frente = nuevo_nodo;
-	}
-	else{
-		fin->siguiente = nuevo_nodo;
-	}
-	
-	fin = nuevo_nodo;
-}
-
-
-bool cola_vacia(Nodo *frente){
-	return (frente == NULL)? true : false; 
-}
-
-
-void suprimirCola(Nodo *&frente,Nodo *&fin,char &n){
-	n = frente->dato;
-	Nodo *aux = frente;
-	
-	if(frente == fin){
-		frente = NULL;
-		fin = NULL;
-	}
-	else{
-		frente = frente->siguiente;
-	}
-	delete aux;
+	return 0;
 }
