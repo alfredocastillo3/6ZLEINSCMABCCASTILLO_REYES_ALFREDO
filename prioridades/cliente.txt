@@ -1,0 +1,12 @@
+USUARIO        :   2323
+ 
+NOMBRE         :   DILAN
+ 
+SALDO ANTERIOR :   0
+ 
+SALDO RETIRO   :   0
+ 
+MONTO AGREGADO :   0
+ 
+SALDO ACTUAL   :   10000
+ 
