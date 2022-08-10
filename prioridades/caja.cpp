@@ -120,11 +120,11 @@ cin>> valor;
 
 saldo = saldo + valor;
 
-if(valor>1000000)
+if(valor>100000)
 
 {
 
-cout<<"EL LIMITE DE DEPOSITO EN SU TIPO DE CUENTA ES A 1 MILLON."<<endl;
+cout<<"EL LIMITE DE DEPOSITO EN SU TIPO DE CUENTA ES A 100 MIL."<<endl;
 
 saldo = saldo-valor;
 

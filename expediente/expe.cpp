@@ -2,21 +2,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#ifdef __MSDOS__
-#include <iostream.h>
-#else
-#include <cstdlib>
+
 using namespace std;
-#endif
 
-typedef struct Paciente{ //Definimos //Definimos una estructura estructura donde se ve las características características que tendrá cada paciente. paciente.
-char Nombre[50];//Nombre Completo maximo de 49 caracteres, y un espacio para el
 
-char DNI[9];//Creamos la variable char DNI[9];//Creamos la variable DNI de 8 digitos y un DNI de 8 digitos y un espacio para la variable de fin espacio para la variable de fin
+typedef struct Paciente{ 
+char Nombre[50];
+char DNI[9];
 
 char Fecha[11];//Fecha en formato aaaa/mm/dd un espacio para el caracter '\0'
 char alergico_a[50];//Cadena para guardar los medicamentos si es alergico a alguno
-char tiene_seguro;//caracer S o N , S=asegurado y N= No asegurado
+char tiene_seguro;//caracer S o N , S=asegurado y N= No asegurad
+char sexo;
 int edad;
 }Paciente;
 void CrearArchivoPaciente(){//Esta opciòn creará un archivo donde se guardara la información
@@ -75,15 +72,19 @@ scanf("%i",&Nuevo.edad);
 //Capturamos el DNI y vaceamos el buffer
 printf("\n\t\t*No: ");fflush(stdin);
 scanf("%s",&Nuevo.DNI);
-//Capturamos Alergias y vaceamos el buffer
-printf("\n\t\t*Alergico a (ninguno = N): ");fflush(stdin);
+
+printf("\n\t\t*Alergico a: (ninguno = N): ");fflush(stdin);
 gets(Nuevo.alergico_a);
-//Capturamos asegurados y vaceamos el buffer
+
+printf("\n\t\t*Sexo: (M/F): ");fflush(stdin);
+scanf("%a");
+
 printf("\n\t\t*Tiene seguro? (s/n): ");fflush(stdin);
 scanf("%c",&Nuevo.tiene_seguro);
-//Guardamos los datos en los arc //Guardamos los datos en los archivos correspondien hivos correspondientes
-fprintf(ArchivoPaciente,"\nDNI: %s ",Nuevo.DNI);
+
+fprintf(ArchivoPaciente,"\nNo: %s ",Nuevo.DNI);
 fprintf(ArchivoPaciente,"\nAlergico a: %s ",Nuevo.alergico_a);
+fprintf(ArchivoPaciente,"\nSexo: %a");
 fprintf(ArchivoPaciente,"\nAsegurado: %c ",Nuevo.tiene_seguro);
 fprintf(ArchivoPaciente,"\nEDAD: %i ",Nuevo.edad);
 //Cerramos el archivo
@@ -112,7 +113,7 @@ else{
 system("cls");
 
 char c[30];
-fflush(stdin);//vaceamos el buffer para evitar errores
+fflush(stdin);
 while(!feof(Archivo)){//Mientras no sea el final del archivo
 fscanf(Archivo," %[^\n]",&c);//leemos linea por linea
 printf("\n%s",c);//Imprimimos lo leido
@@ -127,7 +128,7 @@ char nombre[40];
 system("cls");
 printf("\t\t******Buscar Paciente******\n");
 printf("\n\n\t\tIngrese nombre a buscar: ");
-fflush(stdin);//vaceamos el buffer para evitar errores
+fflush(stdin);
 gets(nombre);
 FILE *Archivo;//creamos una instancia para abrir el archivo
 char str[40];//creamos una cadena de caracteres para copiar nombre
@@ -139,10 +140,10 @@ perror("\n\nNo se encuentra el paciente");
 system("Pause");
 }
 else{
-system("cls");
+
 
 char c[30];
-fflush(stdin);//vaceamos el buffer para evitar errores
+fflush(stdin);
 while(!feof(Archivo)){//Mientras no sea el final del archivo
 fscanf(Archivo," %[^\n]",&c);//leemos linea por linea
 printf("\n%s",c);//Imprimimos lo leido
@@ -160,12 +161,12 @@ printf("\n");
 char descripcion[100];//Cadena para guardar una descripcion de la cita
 printf("\nDescripcion: ");fflush(stdin);
 gets(descripcion);//capturamos descripcion
-fprintf(Archivo,"\nDescripcion: %s",descripcion);//guardamos en el archivo
-fclose(Archivo);//cerramos el archivo
+fprintf(Archivo,"\nDescripcion: %s",descripcion);
+fclose(Archivo);
 system("Pause");
 } 
 }
-int submenu(){//SubMenu el cual retornara la opcion elegida por la persona.
+int submenu(){
 int op=0;
 system("cls");
 printf("\t\t\t*****EXPEDIENTE *****\n\n");
@@ -176,67 +177,69 @@ printf("\t\t4)Buscar Expediente \n");
 printf("\t\t5)Calculadora imc \n");
 printf("\t\t6)Salir\n");
   
-scanf("%i",&op);//Leemos la opcion elegida
-return op;//Devolvemos la opcion elegida
+scanf("%i",&op);
+return op;
 }
 
 
 void imc ()
 {
-    float IMC, altura_en_m, peso_en_kg;
-    cout << "Ingresa el valor de altura en m: ";
-    cin >> altura_en_m;
-    cin.get();
-    cout << "Ingresa el valor de peso en kg: ";
-    cin >> peso_en_kg;
-    cin.get();
-    IMC=peso_en_kg/altura_en_m/altura_en_m;
-    if(IMC<16)
-        cout << "Criterio de ingreso en hospital." << endl;
-    if(IMC>=16&&IMC<17)
-        cout << "Infrapeso." << endl;
-    if(IMC>=17&&IMC<18)
-        cout << "Bajo peso." << endl;
-    if(IMC>=18&&IMC<25)
-        cout << "Peso normal (saludable)." << endl;
-    if(IMC>=5&&IMC<30)
-        cout << "Sobrepeso (obesidad de grado I)." << endl;
-    if(IMC>=30&&IMC<35)
-        cout << "Sobrepeso cr\242nico (obesidad de grado II)." << endl;
-    if(IMC>=35&&IMC<40)
-        cout << "Obesidad prem\242rbida (obesidad de grado III)." << endl;
-    if(IMC>=40)
-        cout << "Obesidad m\242rbida (obesidad de grado IV)." << endl;
-    cout << "Valor de IMC: " << IMC << endl;
-    cout << endl;
+   double altura, peso, IMC;
+
+cout << "introduce tu altura (en metros): ";
+ cin >> altura;
+
+cout <<"Introduce tu peso (en kilogramos): ";
+ cin >> peso;
+
+IMC = peso/(altura*altura);
+
+ cout << "Tu indice de masa corporal es: " << IMC << endl;
+
+if (IMC<=16)
+ cout << "IMC demasiado bajo: infrapeso.";
+
+else if (16<IMC&&IMC<=18.5)
+ cout << "IMC bajo: delgadez.";
+
+else if (18.5<IMC&&IMC<=24.5)
+ cout << "IMC normal: normopeso.";
+
+else if (24.5<IMC&&IMC<30)
+ cout << "IMC alto: sobrepeso.";
+
+else if (30<=IMC)
+ cout << "IMC muy alto: obesidad.";
+
+cout << endl << endl;
     system ("pause");
     
 }
 
 void Historial_Medico(){
-while(1){//Bucle infinito para mantenernos en el menu
+while(1){
 switch(submenu()){//Este switch estará definido por submenu()
 case 1:
 //Crear archivo para un nuevo paciente
 CrearArchivoPaciente();
 break;
 case 2:
-//Agregaremos los datos del nuevo pac //Agregaremos los datos del nuevo paciente
+
 IngresarNuevoPaciente();
 break;
 case 3:
-//En esta sección podremos ver el historial de un paciente
+
 MostrarHistorialDePaciente();
 break;
 case 4:
-//Podremos editar el historial del paciente
+
 BuscarHistorialPaciente();
 break;
 case 5:
 
 imc();
 break;
-case 6://Si presiona la tecla 5 sale del bucle
+case 6:
 return;
 default:
  
