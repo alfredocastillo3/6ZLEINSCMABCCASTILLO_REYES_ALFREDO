@@ -53,11 +53,11 @@ void editarexp(ifstream &loec);
 void borrarexp(ifstream &lec);
 bool c_vacia(Nodo *);
 
+
 int main(){
 	
-	setlocale(LC_ALL,"");
+	setlocale(LC_ALL,"*");
 	
-	system("color 3");
     
     login();
 	
@@ -72,25 +72,14 @@ void login(){
 	
 	do{
 		system("cls");
-		cout<<"\n\t                         ";
+		cout<<"\n\t                    ";
+		cout<<"\n\t       BIENVENIDO               ";
 		cout<<"\n\t                        ";
 		cout<<"\n\t    INICIO DE SESION    ";
 		cout<<"\n\t                        ";
-		cout<<"\n\t      ****   ****           ";
-		cout<<"\n\t     ****** ******           ";
-		cout<<"\n\t    ***************             ";
-		cout<<"\n\t     *************             ";
-		cout<<"\n\t      ***********             ";
-		cout<<"\n\t       *********             ";
-		cout<<"\n\t        *******             ";
-		cout<<"\n\t         *****             ";
-		cout<<"\n\t          ***             ";
-		cout<<"\n\t           *             ";
-		cout<<"\n\t       Iniciando        ";
-		cout<<"\n\t";
-		cout<<"\n\t Usuario: ";
+		cout<<"\n\t        Usuario: ";
 		getline(cin, usuario);
-		cout<<"\t Contraseña: ";
+		cout<<"\n\t     Contraseña: ";
 		
 		char caracter;
 		caracter = getch();
@@ -375,7 +364,7 @@ if(obj=3){
 			break;
 			
 			default:
-				cout<<"\n\tOpción Invalida T-T\n";
+				cout<<"\n\tOpción Invalida \n";
 				break;
 		}
 		cout<<"\n\tPresiona Cualquier Tecla\n";
@@ -595,7 +584,7 @@ void agregar(ofstream &es){
 	cout<<"\t\t                                      "<<endl;
 	cin>>nomb2;
 	cout<<"\t\t                                      "<<endl;
-	cout<<"\Apellido paterno:                     "<<endl;
+	cout<<"Apellido paterno:                     "<<endl;
 	cout<<"\t\t                                      "<<endl;
 	cin>>ape3;
 	cout<<"\t\t                                      "<<endl;
@@ -704,11 +693,14 @@ void menucita(){
 	
 	do{
 		switch(opcion){
-			case '1':
+			case 1:
+			
+			tiempo();
 				
 			break;
 			
 			case '2':
+			
 				
 			break;
 			
@@ -880,36 +872,36 @@ void consultar(ifstream &lec){
 			cout<<"Numero exterior:"<<numEx<<endl;
 			cout<<"Numero interior:"<<numIn<<endl;
 			cout<<"Numero de celular:"<<numCel<<endl;
-			cout<<"\tNumero de contacto:"<<numAux<<endl;
-			cout<<"\tNumero de contacto:"<<numAux2<<endl;
-			cout<<"\tCorreo electronico:"<<correo<<endl;   
+			cout<<"Numero de contacto:"<<numAux<<endl;
+			cout<<"Numero de contacto:"<<numAux2<<endl;
+			cout<<"Correo electronico:"<<correo<<endl;   
 			cout<<"\t"<<endl;
 			//Imprimir el historil familiar
 			cout<<"\t                                                          "<<endl;
 			cout<<"\t                                                   "<<endl;
 			cout<<"\t                                                        "<<endl;
-			cout<<"\t <-------Histrial familiar de"<<" "<<nombre<<"           "<<endl;
+			cout<<"\t        Histrial familiar de"<<" "<<nombre<<"           "<<endl;
 			cout<<"\t                                                     "<<endl;
 			cout<<"\t                                                         "<<endl;
-			cout<<"\tNombre: "<<nomb<<endl;
-			cout<<"\tApellido paterno: "<<ape2<<endl;
-			cout<<"\tApellido materno: "<<apeMa2<<endl;
-			cout<<"\tFecha de nacimiento(dd/mm/aa): "<<edad2<<endl;
-			cout<<"\tParentesco: "<<paren<<endl;
-			cout<<"\tGenero: "<<gene2<<endl;
-			cout<<"\tEstatura: "<<esta2<<endl;
-			cout<<"\tPeso: "<<peso2<<endl;
-			cout<<"\tAlergias: "<<ale2<<endl;
-			cout<<"\tEnfermedades cronicas: "<<en<<endl;
-			cout<<"\tDiscapacidades: "<<dis2<<endl;
-			cout<<"\tTipo de sangre: "<<san2<<endl;
-			cout<<"\tCalle: "<<dom2<<endl;
-			cout<<"\tNumero exterior: "<<numEx2<<endl;
-			cout<<"\tNumero interior: "<<numIn2<<endl;
-			cout<<"\tNumero de celular: "<<numCel2<<endl;
-			cout<<"\tNumero de contacto: "<<numaux<<endl;
-			cout<<"\tNumero de contacto: "<<numaux2<<endl;
-			cout<<"\tCorreo electronico: "<<correo2<<endl;
+			cout<<"Nombre: "<<nomb<<endl;
+			cout<<"Apellido paterno: "<<ape2<<endl;
+			cout<<"Apellido materno: "<<apeMa2<<endl;
+			cout<<"Fecha de nacimiento(dd/mm/aa): "<<edad2<<endl;
+			cout<<"Parentesco: "<<paren<<endl;
+			cout<<"Genero: "<<gene2<<endl;
+			cout<<"Estatura: "<<esta2<<endl;
+			cout<<"Peso: "<<peso2<<endl;
+			cout<<"Alergias: "<<ale2<<endl;
+			cout<<"Enfermedades cronicas: "<<en<<endl;
+			cout<<"Discapacidades: "<<dis2<<endl;
+			cout<<"Tipo de sangre: "<<san2<<endl;
+			cout<<"Calle: "<<dom2<<endl;
+			cout<<"Numero exterior: "<<numEx2<<endl;
+			cout<<"Numero interior: "<<numIn2<<endl;
+			cout<<"Numero de celular: "<<numCel2<<endl;
+			cout<<"Numero de contacto: "<<numaux<<endl;
+			cout<<"Numero de contacto: "<<numaux2<<endl;
+			cout<<"Correo electronico: "<<correo2<<endl;
 			cout<<"\t                                                          "<<endl;
 			cout<<"\t                                                          "<<endl;
 			//Imprimir el segundo historial familiar
@@ -919,25 +911,25 @@ void consultar(ifstream &lec){
 			cout<<"\t  Historial familiar de"<<" "<<nombre<<"           "<<endl;
 			cout<<"\t                                             "<<endl;
 			cout<<"\t                                                         "<<endl;
-			cout<<"\tNombre: "<<nomb2<<endl;
-			cout<<"\tApellido paterno: "<<ape3<<endl;
-			cout<<"\tApellido materno: "<<apeMa3<<endl;
-			cout<<"\tFecha de nacimiento(dd/mm/aa): "<<edad3<<endl;
-			cout<<"\tParentesco: "<<paren2<<endl;
-			cout<<"\tGenero: "<<gene3<<endl;
-			cout<<"\tEstatura: "<<esta3<<endl;
-			cout<<"\tPeso: "<<peso3<<endl;
-			cout<<"\tAlergias: "<<ale3<<endl;
-			cout<<"\tEnfermedades cronicas: "<<en2<<endl;
-			cout<<"\tDiscapacidades: "<<dis3<<endl;
-			cout<<"\tTipo de sangre: "<<san3<<endl;
-			cout<<"\tCalle: "<<dom3<<endl;
-			cout<<"\tNumero exterior: "<<numEx3<<endl;
-			cout<<"\tNumero interior: "<<numIn3<<endl;
-			cout<<"\tNumero de celular: "<<numeCel<<endl;
-			cout<<"\tNumero de contacto: "<<numeaux<<endl;
-			cout<<"\tNumero de contacto: "<<numeaux2<<endl;
-			cout<<"\tCorreo electronico: "<<correo3<<endl;
+			cout<<"Nombre: "<<nomb2<<endl;
+			cout<<"Apellido paterno: "<<ape3<<endl;
+			cout<<"Apellido materno: "<<apeMa3<<endl;
+			cout<<"Fecha de nacimiento(dd/mm/aa): "<<edad3<<endl;
+			cout<<"Parentesco: "<<paren2<<endl;
+			cout<<"Genero: "<<gene3<<endl;
+			cout<<"Estatura: "<<esta3<<endl;
+			cout<<"Peso: "<<peso3<<endl;
+			cout<<"Alergias: "<<ale3<<endl;
+			cout<<"Enfermedades cronicas: "<<en2<<endl;
+			cout<<"Discapacidades: "<<dis3<<endl;
+			cout<<"Tipo de sangre: "<<san3<<endl;
+			cout<<"Calle: "<<dom3<<endl;
+			cout<<"Numero exterior: "<<numEx3<<endl;
+			cout<<"Numero interior: "<<numIn3<<endl;
+			cout<<"Numero de celular: "<<numeCel<<endl;
+			cout<<"Numero de contacto: "<<numeaux<<endl;
+			cout<<"Numero de contacto: "<<numeaux2<<endl;
+			cout<<"Correo electronico: "<<correo3<<endl;
 			cout<<"\t                                                         "<<endl;
 			cout<<"\t                                                          "<<endl;
 			//cuando nombre y nombreaux sean el mismo se mandara un true a "encontrado"
@@ -949,7 +941,7 @@ void consultar(ifstream &lec){
 	
 	//Si no existe el dato imprime este mensaje
 	if(!encontrado)
-		cout<<"No existe :c"<<endl;
+		cout<<"No existe "<<endl;
 		system("pause");
 }
 
@@ -1013,34 +1005,34 @@ void agregarcita(ofstream &es){
 	cout<<"\t        Nueva Cita                      "<<endl;
 	cout<<"\t                                        "<<endl;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tFolio:                                  "<<endl;
+	cout<<"Folio:                                  "<<endl;
 	cin>>folio;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tNombre:                                 "<<endl;
+	cout<<"Nombre:                                 "<<endl;
 	cin>>nombre;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tApellido paterno:                       "<<endl;
+	cout<<"Apellido paterno:                       "<<endl;
 	cin>>ape;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tApellido materno:                       "<<endl;
+	cout<<"Apellido materno:                       "<<endl;
 	cin>>apeMa;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tGenero:                                 "<<endl;
+	cout<<"Genero:                                 "<<endl;
 	cin>>gene;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tFecha de nacimiento(dd/mm/aa):          "<<endl;
+	cout<<"Fecha de nacimiento(dd/mm/aa):          "<<endl;
 	cin>>fecha;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tEstatura:                               "<<endl;
+	cout<<"Estatura:                               "<<endl;
 	cin>>esta;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tPeso:                                   "<<endl;
+	cout<<"Peso:                                   "<<endl;
 	cin>>peso;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tFecha actual(dd/mm/aa):                 "<<endl;
+	cout<<"Fecha actual(dd/mm/aa):                 "<<endl;
 	cin>>date;
 	cout<<"\t                                        "<<endl;
-	cout<<"\tFecha de la proxima cita(dd/mm/aa):     "<<endl;
+	cout<<"Fecha de la proxima cita(dd/mm/aa):     "<<endl;
 	cout<<"\t                                        "<<endl;
 	cin>>fechaCit;
 	//escritura de la cita
@@ -1064,7 +1056,7 @@ void consultarci(ifstream &lec){
 	cout<<"\t          Consultar cita          "<<endl;
 	cout<<"\t                                  "<<endl;
 	cout<<"\t                                   "<<endl;
-	cout<<"\tNumero de folio de la cita:        "<<endl;
+	cout<<"Numero de folio de la cita:        "<<endl;
 	cout<<"\t                                    "<<endl;
 	cout<<"\t                                    "<<endl;
 	cin>>folioaux1;
@@ -1086,20 +1078,20 @@ void consultarci(ifstream &lec){
 			system("cls");
 			cout<<"\t                                                          "<<endl;
 			cout<<"\t                                                          "<<endl;
-			cout<<"\t       Citas de: "<<" "<<nombre<<"         "<<endl;
+			cout<<"Citas de: "<<" "<<nombre<<"         "<<endl;
 			cout<<"\t                                                          "<<endl;
 			cout<<"\t                                                          "<<endl;
 			cout<<"\t                                                           "<<endl;
-			cout<<"\tFolio: "<<folio<<endl;
-			cout<<"\tNombre: "<<nombre<<endl;
-			cout<<"\tApellido paterno: "<<ape<<endl;
-			cout<<"\tApellido materno: "<<apeMa<<endl;
-			cout<<"\tGenero: "<<gene<<endl;
-			cout<<"\t Fecha de nacimiento(dd/mm/aa): "<<fecha<<endl;
-			cout<<"\t Estatura: "<<esta<<endl;
-			cout<<"\t Peso: "<<peso<<endl;
-			cout<<"\t Fecha de la visita(dd/mm/aa): "<<date<<endl;
-			cout<<"\t Fecha de la proxima cita(dd/mm/aa): "<<fechaCit<<endl;
+			cout<<"Folio: "<<folio<<endl;
+			cout<<"Nombre: "<<nombre<<endl;
+			cout<<"Apellido paterno: "<<ape<<endl;
+			cout<<"Apellido materno: "<<apeMa<<endl;
+			cout<<"Genero: "<<gene<<endl;
+			cout<<"Fecha de nacimiento(dd/mm/aa): "<<fecha<<endl;
+			cout<<"Estatura: "<<esta<<endl;
+			cout<<"Peso: "<<peso<<endl;
+			cout<<"Fecha de la visita(dd/mm/aa): "<<date<<endl;
+			cout<<"Fecha de la proxima cita(dd/mm/aa): "<<fechaCit<<endl;
 			cout<<"\t                                                        "<<endl;
 			cout<<"\t                                                        "<<endl;
 			//cuando folio y folioaux1 sean el mismo se mandara un true a "encontrado"
@@ -1129,18 +1121,18 @@ void editarcita(ifstream &lec){
 	cout<<"\t                Editar cita               "<<endl;
 	cout<<"\t                                           "<<endl;
 	cout<<"\t                                          "<<endl;
-	cout<<"\t1.Folio 								   "<<endl;
-	cout<<"\t2.Nombre								   "<<endl;
-	cout<<"\t3.Apellido paterno 					   "<<endl;
-	cout<<"\t4.Apellido materno 					   "<<endl;
-	cout<<"\t5.Genero								   "<<endl;
-	cout<<"\t6.Fecha de nacimiento(dd/mm/aa)		   "<<endl;
-	cout<<"\t7.Estatura							   "<<endl;
-	cout<<"\t8.Peso								   "<<endl;
-	cout<<"\t9.Fecha(dd/mm/aa)						   "<<endl;
-	cout<<"\t10.Fecha de la proxima cita(dd/mm/aa)	   "<<endl;
-	cout<<"\t11.Salir								   "<<endl;
-	cout<<"\tIngrese el dato: 						   "<<endl;                              
+	cout<<"1.Folio 								   "<<endl;
+	cout<<"2.Nombre								   "<<endl;
+	cout<<"3.Apellido paterno 					   "<<endl;
+	cout<<"4.Apellido materno 					   "<<endl;
+	cout<<"5.Genero								   "<<endl;
+	cout<<"6.Fecha de nacimiento(dd/mm/aa)		   "<<endl;
+	cout<<"7.Estatura							   "<<endl;
+	cout<<"8.Peso								   "<<endl;
+	cout<<"9.Fecha(dd/mm/aa)						   "<<endl;
+	cout<<"10.Fecha de la proxima cita(dd/mm/aa)	   "<<endl;
+	cout<<"11.Salir								   "<<endl;
+	cout<<"Ingrese el dato: 						   "<<endl;                              
 	cout<<"\t                                          "<<endl;
 	cin>>opci;
 	//abrir txt
@@ -1186,10 +1178,10 @@ void editarcita(ifstream &lec){
 		case 2:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el nombre a editar: ";
+				cout<<"Ingrese el nombre a editar: ";
 				cin>>nomAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1202,7 +1194,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(nombre == nomAux2){
-							cout<<"\tNuevo Nombre: ";
+							cout<<"Nuevo Nombre: ";
 							cin>>nomAux2;
 							editcita<<folio<<" "<<nomAux2<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<peso<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1222,10 +1214,10 @@ void editarcita(ifstream &lec){
 		case 3:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el Apellido a editar: ";
+				cout<<"Ingrese el Apellido a editar: ";
 				cin>>apeAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1238,7 +1230,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(ape == apeAux2){
-							cout<<"\tNuevo Nombre: ";
+							cout<<"Nuevo Nombre: ";
 							cin>>apeAux2;
 							editcita<<folio<<" "<<nombre<<" "<<apeAux2<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<peso<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1258,10 +1250,10 @@ void editarcita(ifstream &lec){
 		case 4:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el apellido a editar: ";
+				cout<<"Ingrese el apellido a editar: ";
 				cin>>apeMaAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1274,7 +1266,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(apeMa == apeMaAux2){
-							cout<<"\tApellido materno: ";
+							cout<<"Apellido materno: ";
 							cin>>apeMaAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMaAux2<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<peso<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1294,10 +1286,10 @@ void editarcita(ifstream &lec){
 		case 5:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el genero a editar: ";
+				cout<<"Ingrese el genero a editar: ";
 				cin>>geneAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1330,10 +1322,10 @@ void editarcita(ifstream &lec){
 		case 6:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el fecha de nacimiento a editar: ";
+				cout<<"Ingrese el fecha de nacimiento a editar: ";
 				cin>>fechaAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1346,7 +1338,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(fecha == fechaAux2){
-							cout<<"\tFecha de nacimiento(dd/mm/aa): ";
+							cout<<"Fecha de nacimiento(dd/mm/aa): ";
 							cin>>fechaAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fechaAux2<<" "<<esta<<" "<<peso<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1366,10 +1358,10 @@ void editarcita(ifstream &lec){
 		case 7:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese la estatura a editar: ";
+				cout<<"Ingrese la estatura a editar: ";
 				cin>>estaAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1382,7 +1374,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(esta == estaAux2){
-							cout<<"\tNueva estatura: ";
+							cout<<"Nueva estatura: ";
 							cin>>estaAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<estaAux2<<" "<<peso<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1402,10 +1394,10 @@ void editarcita(ifstream &lec){
 		case 8:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese el peso a editar: ";
+				cout<<"Ingrese el peso a editar: ";
 				cin>>pesoAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1418,7 +1410,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(peso == pesoAux2){
-							cout<<"\tNuevo Peso: ";
+							cout<<"Nuevo Peso: ";
 							cin>>pesoAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<pesoAux2<<" "<<date<<" "<<fechaCit<<"\n";
 						}else{
@@ -1438,10 +1430,10 @@ void editarcita(ifstream &lec){
 		case 9:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese la fecha a editar: ";
+				cout<<"Ingrese la fecha a editar: ";
 				cin>>dateAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1454,7 +1446,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(date == dateAux2){
-							cout<<"\tNueva fecha: ";
+							cout<<"Nueva fecha: ";
 							cin>>dateAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<peso<<" "<<dateAux2<<" "<<fechaCit<<"\n";
 						}else{
@@ -1474,10 +1466,10 @@ void editarcita(ifstream &lec){
 		case 10:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folioAux;
 				lec>>folio;
-				cout<<"\n\tIngrese la fecha de la cita a editar: ";
+				cout<<"Ingrese la fecha de la cita a editar: ";
 				cin>>fechaCitAux2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1490,7 +1482,7 @@ void editarcita(ifstream &lec){
 					lec>>date;
 					lec>>fechaCit;
 						if(fechaCit == fechaCitAux2){
-							cout<<"\tFecha de la cita: ";
+							cout<<"Fecha de la cita: ";
 							cin>>fechaCitAux2;
 							editcita<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<gene<<" "<<fecha<<" "<<esta<<" "<<peso<<" "<<date<<" "<<fechaCitAux2<<"\n";
 						}else{
@@ -1521,7 +1513,7 @@ void borrarcita(ifstream &lec){
 	lec.open("Cita.txt", ios::in);
 	ofstream editcita("EditarCita.txt", ios::out);
 	if(lec.is_open()){
-		cout<<"\n\tIngrese el folio: ";
+		cout<<"Ingrese el folio: ";
 		cin>>folioaux1;
 		lec>>folio;
 		while(!lec.eof()){
@@ -1535,7 +1527,7 @@ void borrarcita(ifstream &lec){
 			lec>>date;
 			lec>>fechaCit;
 			if(folio == folioaux1){
-				cout<<"Eliminado correctamente :D";
+				cout<<"Eliminado correctamente";
 				//Esta es la linea que hace la funcion de eliminar 
 				Sleep(1500);
 			}else{
@@ -1581,27 +1573,27 @@ void editarexp(ifstream &lec){
     cout<<"\t                                          "<<endl;
 	cout<<"\t             Editar expediente            "<<endl;
 	cout<<"\t                                          "<<endl;
-	cout<<"\t1.Folio                                   "<<endl;
-	cout<<"\t2.Nombre                                  "<<endl;
-	cout<<"\t3.Apellido paterno                        "<<endl;
-	cout<<"\t4.Apellido materno                        "<<endl;
-	cout<<"\t5.Fecha de nacimiento(dd/mm/aa)           "<<endl;
-	cout<<"\t6.Genero                                  "<<endl;
-	cout<<"\t7.Estatura                                "<<endl;
-	cout<<"\t8.Peso                                    "<<endl;
-	cout<<"\t9.Alergias                                "<<endl;
-	cout<<"\t10.Enfermedades cronicas                  "<<endl;
-	cout<<"\t11.Discapacidades                         "<<endl;
-	cout<<"\t12.Tipo de sangre                         "<<endl;
-	cout<<"\t13.Calle                                  "<<endl;
-	cout<<"\t14.Numero exterior                        "<<endl;
-	cout<<"\t15.Numero interior                        "<<endl;
-	cout<<"\t16.Numero de celular                      "<<endl;
-	cout<<"\t17.Numero de contacto                     "<<endl;
-	cout<<"\t18.Numero de contacto                     "<<endl;
-	cout<<"\t19.Correo electronico                     "<<endl;
-	cout<<"\t20.Salir                                  "<<endl;
-	cout<<"\tIngrese la opcion a editar:"<<endl;
+	cout<<"1.Folio                                   "<<endl;
+	cout<<"2.Nombre                                  "<<endl;
+	cout<<"3.Apellido paterno                        "<<endl;
+	cout<<"4.Apellido materno                        "<<endl;
+	cout<<"5.Fecha de nacimiento(dd/mm/aa)           "<<endl;
+	cout<<"6.Genero                                  "<<endl;
+	cout<<"7.Estatura                                "<<endl;
+	cout<<"8.Peso                                    "<<endl;
+	cout<<"9.Alergias                                "<<endl;
+	cout<<"10.Enfermedades cronicas                  "<<endl;
+	cout<<"11.Discapacidades                         "<<endl;
+	cout<<"12.Tipo de sangre                         "<<endl;
+	cout<<"13.Calle                                  "<<endl;
+	cout<<"14.Numero exterior                        "<<endl;
+	cout<<"15.Numero interior                        "<<endl;
+	cout<<"16.Numero de celular                      "<<endl;
+	cout<<"17.Numero de contacto                     "<<endl;
+	cout<<"18.Numero de contacto                     "<<endl;
+	cout<<"19.Correo electronico                     "<<endl;
+	cout<<"20.Salir                                  "<<endl;
+	cout<<"Ingrese la opcion a editar:"<<endl;
 	cin>>x;                                    
 	
 	lec.open("Expediente.txt", ios::in);
@@ -1611,7 +1603,7 @@ void editarexp(ifstream &lec){
 		case 1:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\n\tIngrese el folio que desea editar: ";
+				cout<<"Ingrese el folio que desea editar: ";
 				cin>>folio1;
 				lec>>folio;
 				while(!lec.eof()){
@@ -1634,7 +1626,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(folio == folio1){
-						cout<<"\tNuevo folio: ";
+						cout<<"Nuevo folio: ";
 						cin>>folio1;
 						editexp<<folio1<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1654,10 +1646,10 @@ void editarexp(ifstream &lec){
 		case 2:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el nombre: ";
+				cout<<"Ingrese el nombre: ";
 				cin>>nomb2;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1679,7 +1671,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(nombre == nomb2){
-						cout<<"\tNuevo nombre: ";
+						cout<<"Nuevo nombre: ";
 						cin>>nomb2;
 						editexp<<folio<<" "<<nomb2<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1699,10 +1691,10 @@ void editarexp(ifstream &lec){
 		case 3:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el Apellido Paterno: ";
+				cout<<"Ingrese el Apellido Paterno: ";
 				cin>>apeAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1724,7 +1716,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(ape == apeAux1){
-						cout<<"\tNuevo Apellido paterno: ";
+						cout<<"Nuevo Apellido paterno: ";
 						cin>>apeAux1;
 						editexp<<folio<<" "<<nombre<<" "<<apeAux1<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1743,10 +1735,10 @@ void editarexp(ifstream &lec){
 		case 4:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el Apellido Materno: ";
+				cout<<"Ingrese el Apellido Materno: ";
 				cin>>apeMaAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1768,7 +1760,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(apeMa == apeMaAux1){
-						cout<<"\tNuevo Apellido paterno: ";
+						cout<<"Nuevo Apellido paterno: ";
 						cin>>apeMaAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMaAux1<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1788,10 +1780,10 @@ void editarexp(ifstream &lec){
 		case 5:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese la fecha de nacimiento(dd/mm/aa): ";
+				cout<<"Ingrese la fecha de nacimiento(dd/mm/aa): ";
 				cin>>edadAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1813,7 +1805,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(edad == edadAux1){
-						cout<<"\tNueva fecha de nacimiento(dd/mm/aa): ";
+						cout<<"Nueva fecha de nacimiento(dd/mm/aa): ";
 						cin>>edadAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edadAux1<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1829,14 +1821,14 @@ void editarexp(ifstream &lec){
 				rename("EditarExp.txt", "Expediente.txt");
 		break;
 		
-		//editar genero
+		// genero
 		case 6:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el genero: ";
+				cout<<"Ingrese el genero: ";
 				cin>>geneAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1858,7 +1850,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(gene == geneAux1){
-						cout<<"\tIngrese el nuevo genero: ";
+						cout<<"Ingrese el nuevo genero: ";
 						cin>>geneAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<geneAux1<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1874,14 +1866,14 @@ void editarexp(ifstream &lec){
 				rename("EditarExp.txt", "Expediente.txt");
 		break;
 		
-		//editar estatura
+		// estatura
 		case 7:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese la estatura: ";
+				cout<<"Ingrese la estatura: ";
 				cin>>estaAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1903,7 +1895,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(esta == estaAux1){
-						cout<<"\tNueva estatura: ";
+						cout<<"Nueva estatura: ";
 						cin>>estaAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<estaAux1<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1923,10 +1915,10 @@ void editarexp(ifstream &lec){
 		case 8:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el peso: ";
+				cout<<"Ingrese el peso: ";
 				cin>>pesoAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1948,7 +1940,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(peso == pesoAux1){
-						cout<<"\tNuevo peso: ";
+						cout<<"Nuevo peso: ";
 						cin>>pesoAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<pesoAux1<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -1968,10 +1960,10 @@ void editarexp(ifstream &lec){
 		case 9:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese si tiene o no alergias: ";
+				cout<<"Ingrese si tiene o no alergias: ";
 				cin>>aleAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -1993,7 +1985,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(ale == aleAux1){
-						cout<<"\tPadece de alergias: ";
+						cout<<"Padece de alergias: ";
 						cin>>aleAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<aleAux1<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2038,7 +2030,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(enfe == enfeAux1){
-						cout<<"\tPadece de enfermedades cronicas: ";
+						cout<<"Padece de enfermedades cronicas: ";
 						cin>>enfeAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfeAux1<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2058,10 +2050,10 @@ void editarexp(ifstream &lec){
 		case 11:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato que desea cambiar: ";
+				cout<<"Ingrese el dato que desea cambiar: ";
 				cin>>disAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2083,7 +2075,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(dis == disAux1){
-						cout<<"\tIngrese el nuevo dato: ";
+						cout<<"Ingrese el nuevo dato: ";
 						cin>>disAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<disAux1<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2103,10 +2095,10 @@ void editarexp(ifstream &lec){
 		case 12:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato que desea cambiar: ";
+				cout<<"Ingrese el dato que desea cambiar: ";
 				cin>>sanAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2128,7 +2120,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(san == sanAux1){
-						cout<<"\tTipo de sangre: ";
+						cout<<"Tipo de sangre: ";
 						cin>>sanAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<sanAux1<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2148,10 +2140,10 @@ void editarexp(ifstream &lec){
 		case 13:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>domAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2173,7 +2165,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(dom == domAux1){
-						cout<<"\tCalle: ";
+						cout<<"Calle: ";
 						cin>>domAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<domAux1<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2196,7 +2188,7 @@ void editarexp(ifstream &lec){
 				cout<<"\tIngrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>numExAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2218,7 +2210,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(numEx == numExAux1){
-						cout<<"\tNumero exterior: ";
+						cout<<"Numero exterior: ";
 						cin>>numExAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numExAux1<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2238,10 +2230,10 @@ void editarexp(ifstream &lec){
 		case 15:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>numInAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2263,7 +2255,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(numIn == numInAux1){
-						cout<<"\tNumero interior: ";
+						cout<<"Numero interior: ";
 						cin>>numInAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numInAux1<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2283,10 +2275,10 @@ void editarexp(ifstream &lec){
 		case 16:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>numCelAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2308,7 +2300,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(numCel == numCelAux1){
-						cout<<"\tNumero de celular: ";
+						cout<<"Numero de celular: ";
 						cin>>numCelAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCelAux1<<" "<<numAux<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2328,10 +2320,10 @@ void editarexp(ifstream &lec){
 		case 17:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>numaux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2353,7 +2345,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(numAux == numaux1){
-						cout<<"\tNumero de contacto: ";
+						cout<<"Numero de contacto: ";
 						cin>>numaux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numaux1<<" "<<numAux2<<" "<<correo<<"\n";
 					}else{
@@ -2373,10 +2365,10 @@ void editarexp(ifstream &lec){
 		case 18:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>numaux5;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2398,7 +2390,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(numAux2 == numaux5){
-						cout<<"\tNumero de contacto 2: ";
+						cout<<"Numero de contacto 2: ";
 						cin>>numaux5;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numaux5<<" "<<correo<<"\n";
 					}else{
@@ -2418,10 +2410,10 @@ void editarexp(ifstream &lec){
 		case 19:
 			system("cls");
 			if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
-				cout<<"\n\tIngrese el dato anterior: ";
+				cout<<"Ingrese el dato anterior: ";
 				cin>>correoAux1;
 				while(!lec.eof()){
 					lec>>nombre;
@@ -2443,7 +2435,7 @@ void editarexp(ifstream &lec){
 					lec>>numAux2;
 					lec>>correo;
 					if(correo == correoAux1){
-						cout<<"\tNumero exterior: ";
+						cout<<"Numero exterior: ";
 						cin>>correoAux1;
 						editexp<<folio<<" "<<nombre<<" "<<ape<<" "<<apeMa<<" "<<edad<<" "<<gene<<" "<<esta<<" "<<peso<<" "<<ale<<" "<<enfe<<" "<<dis<<" "<<san<<" "<<dom<<" "<<numEx<<" "<<numIn<<" "<<numCel<<" "<<numAux<<" "<<numAux2<<" "<<correoAux1<<"\n";
 					}else{
@@ -2497,7 +2489,7 @@ void borrarexp(ifstream &lec){
 	lec.open("Expediente.txt", ios::in);
 	ofstream editexp("EditarExp.txt", ios::out);
 	if(lec.is_open()){
-				cout<<"\tIngrese el folio: ";
+				cout<<"Ingrese el folio: ";
 				cin>>folio1;
 				lec>>folio;
 				while(!lec.eof()){
@@ -2560,7 +2552,7 @@ void borrarexp(ifstream &lec){
 					lec>>numeaux2;
 					lec>>correo3;
 						if(folio == folio1){
-							cout<<"\tEliminado correctamente :D";
+							cout<<"Eliminado correctamente ";
 							//Esta es la linea que hace la funcion de eliminar 
 							Sleep(1500);
 						}else{
@@ -2593,23 +2585,23 @@ void menuuser(){
 	cout<<endl<<"\t                                  ";
 	cout<<endl<<"\t         Usuario        ";
 	cout<<endl<<"\t         ";
-	cout<<endl<<"\t 1. Registrar Expediente          ";
+	cout<<endl<<"1. Registrar Expediente          ";
 	cout<<endl<<"\t         ";
-	cout<<endl<<"\t 2. Consultar Expediente          ";
+	cout<<endl<<"2. Consultar Expediente          ";
 	cout<<endl<<"\t             ";
-	cout<<endl<<"\t 3. Editar Expediente             ";
+	cout<<endl<<"3. Editar Expediente             ";
 	cout<<endl<<"\t       ";
-	cout<<endl<<"\t 4. Borra Expediente              ";
+	cout<<endl<<"4. Borra Expediente              ";
 	cout<<endl<<"\t          ";
-	cout<<endl<<"\t 5. Registrar Cita                ";
+	cout<<endl<<"5. Registrar Cita                ";
 	cout<<endl<<"\t  ";
-	cout<<endl<<"\t 6. Consultar Cita                ";
+	cout<<endl<<"6. Consultar Cita                ";
 	cout<<endl<<"\t                       ";
-	cout<<endl<<"\t 7. Editar Cita                   ";
+	cout<<endl<<"7. Editar Cita                   ";
 	cout<<endl<<"\t                                 ";
-	cout<<endl<<"\t 8. Borrar Cita                   ";
+	cout<<endl<<"8. Borrar Cita                   ";
 	cout<<endl<<"\t                                  ";
-	cout<<endl<<"\t 0. Salir                         ";
+	cout<<endl<<"0. Salir                         ";
 	cout<<endl<<"\t  ";
 	cout<<endl<<"\tOpción:";
 	cin>>opcion;
@@ -2702,25 +2694,25 @@ void agregarDatos(ICO &pacientes){
 		cout<<endl<<"\t                             ";
 		foutput<<"\n\t|\n\t     Datos Generales     ";
 		
-		cout<<"\n\t|\n\tNombre: ";
+		cout<<"Nombre: ";
 		cin.getline(pacientes.nombre, 10, '\n');
-		foutput<<"\n\t|\n\tNombre: "<< pacientes.nombre;
+		foutput<<"Nombre: "<< pacientes.nombre;
 		
-		cout<<"\tApellido Paterno: ";
+		cout<<"Apellido Paterno: ";
 		cin.getline(pacientes.app, 10, '\n');
-		foutput<<"\t\t Apellido Paterno: "<< pacientes.app;
+		foutput<<"Apellido Paterno: "<< pacientes.app;
 		
-		cout<<"\tApellido Materno: ";
+		cout<<"Apellido Materno: ";
 		cin.getline(pacientes.apm, 10, '\n');
-		foutput<<"\t\tApellido Materno: "<< pacientes.apm;
+		foutput<<"Apellido Materno: "<< pacientes.apm;
 		
-		cout<<"\tGénero: ";
+		cout<<"Género: ";
 		cin.getline(pacientes.genero, 10, '\n');
-		foutput<<"\t\tGenero: " << pacientes.genero;
+		foutput<<"Genero: " << pacientes.genero;
 		
-		cout<<"\tFecha de Nacimiento (dd/mm): ";
+		cout<<"Fecha de Nacimiento (dd/mm): ";
 		cin.getline(pacientes.fechanac, 10, '\n');
-		foutput<<"\n\t|\n\tFecha de Nacimiento: " << pacientes.fechanac;
+		foutput<<"Fecha de Nacimiento: " << pacientes.fechanac;
 		
     	printf("Año de Nacimiento: ");
     	scanf("%d", &nacimiento);
@@ -2812,7 +2804,7 @@ void agregarDatos(ICO &pacientes){
 		fflush(stdin);
     	menuuser();
 	}else{
-		cout<<"\n\t***Error en Archivo***";
+		cout<<"\n\t  Error en Archivo";
 	}
 }
 
@@ -2857,12 +2849,12 @@ void buscarDatos(Nodo *frente, ICO pacientes){
 	Nodo *actual = new Nodo();
 	actual = frente;
 	
-	cout<<"\n\tIngrese Folio del Paciente: ";
+	cout<<"Ingrese Folio del Paciente: ";
 	cin>>pacientes.nombre;
 	
 		while((actual != NULL) && (actual->pacientes.nombre <= pacientes.nombre)){
 		if(actual->pacientes.nombre == pacientes.nombre){
-			cout<<"\n\tPaciente: "<<actual->pacientes.nombre<<"; Sexo ("<<actual->pacientes.genero<<"; Peso: "<<actual->pacientes.peso<<" Si a sido encontrado en Registros\n";
+			cout<<"Paciente: "<<actual->pacientes.nombre<<"; Sexo ("<<actual->pacientes.genero<<"; Peso: "<<actual->pacientes.peso<<" Si a sido encontrado en Registros\n";
 		band = true;
 		}
 		actual = actual->siguiente;
@@ -2870,7 +2862,7 @@ void buscarDatos(Nodo *frente, ICO pacientes){
 	if(band == true){
 		
 	}else{
-	cout<<"\n\tPaciente: "<<actual->pacientes.nombre<<" No a sido endontrado en Registros\n";
+	cout<<"Paciente: "<<actual->pacientes.nombre<<" No a sido endontrado en Registros\n";
 	}
 }
 
@@ -2881,33 +2873,33 @@ void modificarDato(Nodo *frente, ICO pacientes){
 	Nodo* actual = new Nodo();
 	actual = frente;
 	
-	cout<<"\n\tIngresa Folio del Paciente: ";
+	cout<<"Ingresa Folio del Paciente: ";
 	cin>>pacientes.nombre;
 		
 		while(actual!=NULL && band != true){
 			
 				if(actual->pacientes.nombre == pacientes.nombre){
-					cout << "\n\tPaciente Encontrado";
-					cout << "\n\tNombre del Paciente: " << actual->pacientes.nombre;
-					cout << "\n\tIngrese Nuevo Nombre para este Paciente: ";
+					cout << "Paciente Encontrado";
+					cout << "Nombre del Paciente: " << actual->pacientes.nombre;
+					cout << "Ingrese Nuevo Nombre para este Paciente: ";
 					cin >> actual -> pacientes.nombre;
 				
-					cout << "\n\tSexo del Paciente: "<< actual->pacientes.genero;
-					cout << "\n\tIngrese Nuevo Sexo para este Paciente: ";
+					cout << "Sexo del Paciente: "<< actual->pacientes.genero;
+					cout << "Ingrese Nuevo Sexo para este Paciente: ";
 					cin >> actual -> pacientes.genero;
 				
-					cout << "\n\tPeso del Paciente: "<< actual->pacientes.peso;
-					cout << "\n\tIngrese Nuevo Peso para este Paciente: ";
+					cout << "Peso del Paciente: "<< actual->pacientes.peso;
+					cout << "Ingrese Nuevo Peso para este Paciente: ";
 					cin >> actual -> pacientes.peso;
 				
-					cout << "\n\tPaciente Modificado\n\n";
+					cout << "Paciente Modificado\n\n";
 					band = true;
 			}
 			
 			actual = actual->siguiente;
 		}
 		if(!band){
-			cout << "\n\tPaciente No Encontrado\n\n";
+			cout << "Paciente No Encontrado\n\n";
 		}		
 }
 
