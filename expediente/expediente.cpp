@@ -9,9 +9,9 @@
 #include <time.h>
 #include<windows.h>
 
-#define USER "Doctor"
+#define USER "2222"
 #define PASS "1234"
-#define user "Enfermera"
+#define user "1111"
 #define pass "123"
 
 using namespace std;
